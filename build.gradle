@@ -24,11 +24,14 @@ plugins {
 group = 'softwareag'
 
 // Define the main class for the application
-mainClassName = 'BetterPorter'
+mainClassName = 'softwareag.TestablePorter'
 
 dependencies {
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    
+    // Use Mockito mocking framework
+    testCompile 'org.mockito:mockito-all:1.10.19'
 }
 
 // In this section you declare where to find the dependencies of your project
