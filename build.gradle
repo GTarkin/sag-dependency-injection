@@ -15,10 +15,16 @@ plugins {
     
     // Apply the eclipse plugin for generating eclipse project files
     id 'eclipse' 
+    
+    // Apply pittest plugin
+    id 'info.solidsoft.pitest' version '1.3.0'
 }
 
+// Define project group - used by pittest to determine the classes to check
+group = 'softwareag'
+
 // Define the main class for the application
-mainClassName = 'Porter'
+mainClassName = 'BetterPorter'
 
 dependencies {
     // Use JUnit test framework

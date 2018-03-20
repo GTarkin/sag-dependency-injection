@@ -1,3 +1,4 @@
+package softwareag;
 import java.time.LocalTime;
 
 public class MorningChecker {
