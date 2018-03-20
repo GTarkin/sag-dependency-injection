@@ -30,7 +30,7 @@ public class TestablePorterTest {
 
     when(clock.currentTime()).thenReturn(LocalTime.of(0, 0));
 
-    porter = new TestablePorter(new MorningChecker(), out, clock);
+    porter = new TestablePorter(new MorningChecker(clock), out);
   }
 
 

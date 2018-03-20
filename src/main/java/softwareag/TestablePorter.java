@@ -6,19 +6,17 @@ public class TestablePorter {
 	
 	private MorningChecker morningChecker;
 	private PrintStream out;
-	private TimeSource timeSource;
 
-	public TestablePorter(MorningChecker mc, PrintStream out, TimeSource ts){
+	public TestablePorter(MorningChecker mc, PrintStream out){
 		this.morningChecker = Objects.requireNonNull(mc);
 		this.out = Objects.requireNonNull(out);
-		this.timeSource = Objects.requireNonNull(ts);
 	}
 
 	public static final int SUCCESS = 0;
 	public static final int FAILURE = 1;
 
 	public static void main(String[] args) {
-		TestablePorter aPorter = new TestablePorter(new MorningChecker(), System.out, TimeSource.LOCAL_TIME_SOURCE);
+		TestablePorter aPorter = new TestablePorter(new MorningChecker(TimeSource.LOCAL_TIME_SOURCE), System.out);
 		int exitCode = aPorter.greet(args);
 		System.exit(exitCode);
 	}
@@ -29,7 +27,7 @@ public class TestablePorter {
 			return FAILURE;
 		} else {
 			String greetingPhrase = null;
-			if(morningChecker.isMorning(timeSource.currentTime())){
+			if(morningChecker.isMorning()){
 				greetingPhrase = String.format("Good morning %s", String.join(" and ", names));
 			} else {
 				greetingPhrase = String.format("Hello %s", String.join(" and ", names));				
