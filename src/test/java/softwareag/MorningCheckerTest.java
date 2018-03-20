@@ -10,12 +10,12 @@ import org.junit.Test;
 
 public class MorningCheckerTest {
 
-  MorningChecker morningChecker;
+  MorningCheckerImpl morningChecker;
 
 
   @Before
   public void setup() {
-    morningChecker = new MorningChecker();
+    morningChecker = new MorningCheckerImpl();
   }
 
 

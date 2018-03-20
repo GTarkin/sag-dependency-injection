@@ -27,11 +27,18 @@ group = 'softwareag'
 mainClassName = 'softwareag.TestablePorter'
 
 dependencies {
+	
+	// Use the Guice Dependency Injection framework	
+	compile 'com.google.inject:guice:4.2.0'
+
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
     
     // Use Mockito mocking framework
     testCompile 'org.mockito:mockito-all:1.10.19'
+    
+    // Use testlib extension for google Guice. It integrates neatly with Mockito
+    testCompile 'com.google.inject.extensions:guice-testlib:4.2.0'   
 }
 
 // In this section you declare where to find the dependencies of your project

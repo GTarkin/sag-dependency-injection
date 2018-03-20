@@ -1,12 +1,13 @@
 package softwareag;
+
 import java.time.LocalTime;
 
-public class MorningChecker {
+public interface MorningChecker {
 
-	private static final int BREAKFAST_TIME = 8;
-	private static final int DINNER_TIME = 12;
-
-	public boolean isMorning(LocalTime time) {
-		return time.getHour() >= BREAKFAST_TIME && time.getHour() <= DINNER_TIME;
-	}
+  /**
+   * Decides for a given {@link LocalTime} if it is in the morning
+   * @param time The {@link LocalTime} which should be checked if it is in the morning
+   * @return <code>true</code> if the provided time is in the morning, <code>false</code> otherwise
+   */
+  boolean isMorning(LocalTime time);
 }
